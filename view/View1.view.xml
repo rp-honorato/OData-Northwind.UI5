@@ -1,6 +1,49 @@
-<mvc:View controllerName="crud.northwind.controller.View1"
+<mvc:View
+    controllerName="crud.northwind.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+<Page
+	id="page"
+	title="{i18n>title}"
+    titleAlignment="Center"
+	class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer">
+
+			<smartTable:SmartTable
+                id="LineItemsSmartTable"
+                entitySet="Products"
+                smartFilterId="smartFilterBar"
+                tableType="Table"
+                enableExport="true"
+                beforeExport="onBeforeExport"
+                useVariantManagement="true"
+                useTablePersonalisation="true"
+                header="Products"
+                showRowCount="true"
+                persistencyKey="SmartTableAnalytical_Explored"
+                enableAutoBinding="true"
+                class="sapUiResponsiveContentPadding"
+                enableAutoColumnWidth="true"
+                editTogglable="true"
+                initiallyVisibleFields="ID"
+                app:useSmartToggle="true">
+				
+				<smartTable:layoutData>
+					<FlexItemData
+                    growFactor="1"
+                    baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button
+                type="Accept"
+                text="Accept"/>
+			</OverflowToolbar>
+		</footer>
     </Page>
 </mvc:View>
