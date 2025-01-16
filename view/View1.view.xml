@@ -28,7 +28,7 @@
                 class="sapUiResponsiveContentPadding"
                 enableAutoColumnWidth="true"
                 editTogglable="true"
-                initiallyVisibleFields="ID"
+                initiallyVisibleFields="ID,Description,Name,DiscontinuedDate,Price,Rating,ReleaseDate"
                 app:useSmartToggle="true">
 				
 				<smartTable:layoutData>
@@ -40,9 +40,6 @@
 		<footer>
 			<OverflowToolbar>
 				<ToolbarSpacer/>
-				<Button
-                type="Accept"
-                text="Accept"/>
 			</OverflowToolbar>
 		</footer>
     </Page>
